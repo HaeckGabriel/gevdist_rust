@@ -12,8 +12,8 @@ use rand::Rng;
 /// Gumbel Dist. struct
 #[derive(Clone, Copy)]
 pub struct Gumbel {
-    loc:   f64, // location parameter, $\in \mathbb{R}$
-    scale: f64, // scale parameter, $> 0$
+    pub loc:   f64, // location parameter, $\in \mathbb{R}$
+    pub scale: f64, // scale parameter, $> 0$
 }
 
 impl Gumbel {
