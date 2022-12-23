@@ -1,4 +1,5 @@
-//! GEV Distribution
+//! The Generalized Extreme Value (GEV) Distribution, which generalizes the Gumbel, Frechet and
+//! Weibull distributions.
 use libm::{exp, log, pow};
 
 use crate::dist::distutils::*;
@@ -10,13 +11,16 @@ use rand::Rng;
 /// Fréchet Dist. struct
 #[derive(Clone, Copy)]
 pub struct GEV {
-    pub loc:   f64, // location parameter, $\in \mathbb{R}$
-    pub scale: f64, // scale parameter, $> 0$
-    pub shape: f64, // shape parameter, $\in \mathbb{R}$
+    /// location parameter
+    pub loc:   f64,
+    /// scale parameter, must be positive
+    pub scale: f64,
+    /// shape parameter
+    pub shape: f64,
 }
 
 impl GEV {
-    /// Create GEV Distribution given location (loc), scale and shape parameter.
+    /// Create an instance of the GEV Distribution given location (loc), scale and shape parameter.
     /// The scale parameter must be larger than 0.
     #[inline]
     pub fn new(loc: f64, scale: f64, shape: f64) -> Self {
@@ -58,7 +62,7 @@ impl GEV {
 }
 
 impl DistQuant for GEV {
-     /// CDF: $F(x) = \exp \left \{ - t_func(x) \right \} $
+    /// CDF: $F(x) = \exp \left \{ - t_func(x) \right \} $
     /// for $1 + shape \left( \frac{x - loc}{ scale} > 0$
     fn cdf(&self, x: f64) -> f64 {
         domain!(1.0 + self.shape * ( (x - self.loc ) / self.scale ) > 0.0 && self.scale > 0.0); // need  $1 + shape \left( \frac{x - loc}{ scale} > 0$ 
@@ -88,6 +92,7 @@ impl DistQuant for GEV {
         }
     }
 
+    /// Return a randomly generated value from the GEV distribution.
     fn random(&self, seed: RandomSeed) -> f64 {
         
         let mut rng = match seed {
