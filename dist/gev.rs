@@ -11,9 +11,9 @@ use rand::Rng;
 /// Fréchet Dist. struct
 #[derive(Clone, Copy)]
 pub struct GEV {
-    loc:   f64, // location parameter, $\in \mathbb{R}$
-    scale: f64, // scale parameter, $> 0$
-    shape: f64, // shape parameter, $\in \mathbb{R}$
+    pub loc:   f64, // location parameter, $\in \mathbb{R}$
+    pub scale: f64, // scale parameter, $> 0$
+    pub shape: f64, // shape parameter, $\in \mathbb{R}$
 }
 
 impl GEV {
