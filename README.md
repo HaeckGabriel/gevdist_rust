@@ -31,8 +31,13 @@ You can read more about the family of GEV Distributions [here](https://en.wikipe
 
 ### Gumbel Distribution
 
-The Gumbel distribution is defined, for location parameter $\mu$ and scale parameter $\theta > 0$, with the CDF
-$$F(x) = \exp \left ( - \exp  \left ( - \frac{x - \mu}{\theta}   \right ) \right ), \quad x \in \mathbb{R}. $$
+The Gumbel distribution is defined, for location parameter $\mu \in \mathbb{R}$ and scale parameter $\sigma > 0$, with the CDF
+$$F(x) = \exp \left ( - \exp  \left ( - \frac{x - \mu}{\sigma}   \right ) \right ), \quad x \in \mathbb{R}. $$
+
+### Fréchet Distribution
+
+The Fréchet distribution is defined, for location parameter $\mu \in \mathbb{R}$, scale and shape parameters $\sigma, \xi >0$, with the following CDF:
+$$ F(x) = \exp \left ( - \left ( \frac{x - \mu}{\sigma} \right)^{-\xi} \right ), \quad x \in \mathbb{R}. $$
 
 # To do
 - [ ] add macros to create instances of each distribution.
