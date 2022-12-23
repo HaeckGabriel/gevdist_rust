@@ -1,4 +1,4 @@
-//! Fréchet Distribution
+//! The Fréchet Distribution
 use libm::{exp, log, pow};
 
 use crate::dist::distutils::*;
@@ -10,13 +10,16 @@ use rand::Rng;
 /// Fréchet Dist. struct
 #[derive(Clone, Copy)]
 pub struct Frechet {
-    pub loc:   f64, // location parameter, $\in \mathbb{R}$
-    pub scale: f64, // scale parameter, $> 0$
-    pub shape: f64, // shape parameter, $\in \mathbb{R}$
+    /// location parameter
+    pub loc:   f64,
+    /// scale parameter, must be positive
+    pub scale: f64,
+    /// shape parameter
+    pub shape: f64,
 }
 
 impl Frechet {
-    /// Create Frechet Distribution given location (loc), scale and shape parameter.
+    /// Create an instance of the Frechet Distribution given location (loc), scale and shape parameter.
     /// The scale and shape parameter must be larger than 0.
     #[inline]
     pub fn new(loc: f64, scale: f64, shape: f64) -> Self {
@@ -69,6 +72,7 @@ impl DistQuant for Frechet {
         self.loc + self.scale * pow(-log(x), - 1.0 / self.shape)
     }
 
+    /// Return a randomly generated value from the Frechet distribution.
     fn random(&self, seed: RandomSeed) -> f64 {
         
         let mut rng = match seed {
@@ -86,7 +90,7 @@ impl DistQuant for Frechet {
 mod tests {
     use super::*;
 
-    // quick macro to create the instance of the Gumbel Distribution
+    // quick macro to create the instance of the Frechet Distribution
     macro_rules! new_frechet(
         ($loc:expr, $scale:expr, $shape:expr) => (Frechet::new($loc, $scale, $shape));
     );
