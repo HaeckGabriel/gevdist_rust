@@ -46,7 +46,7 @@ $$F(x) = \exp \left ( - \left (  - \left ( \frac{x - \mu}{ \sigma } \right) \rig
 
 ### GEV Distribution
 
-The GEV Distribution generalizes all of the above distributions. It is defined for location parameter $\mu \in \mathbb{R}$, scale parameter $\sigma >0$ and shape parameters $\zeta \in \mathbb{R}$ with the CDF of $F(x) = \exp \left ( t(x) \right)$ for $1 + \zeta \left( \frac{x - \mu}{\sigma} > 0$, where
+The GEV Distribution generalizes all of the above distributions. It is defined for location parameter $\mu \in \mathbb{R}$, scale parameter $\sigma >0$ and shape parameters $\zeta \in \mathbb{R}$ with the CDF of $F(x) = \exp \left ( t(x) \right)$ for $1 + \zeta \left( \frac{x - \mu}{\sigma} \right ) > 0$, where
 $$t(x) = \left( 1 + \zeta \left( \frac{x - \mu}{\sigma} \right) \right)^{- \frac{1}{\zeta}} \quad \text{if} \quad \zeta \neq 0, $$
 and
 $$ t(x) = \exp \left ( - \frac{x - loc}{ scale}  \right ) \quad \text{if} \quad \zeta = 0.$$
