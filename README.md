@@ -1,10 +1,10 @@
-<h1 align="center"> GEV Distribution (Rust) </h1>
+<h1 align="center"> Extreme Value Distributions (Rust) </h1>
 
-<h4 align="center"> The Extreme Value Distributions in Rust. </h4>
+<h4 align="center"> The family of Extreme Value Distributions in Rust. </h4>
 
 <p align="center">
   <a href="https://crates.io/crates/gevlib">
-    <img src="https://img.shields.io/badge/Version-0.1.1-blueviolet?style=for-the-badge&logo=Rust">
+    <img src="https://img.shields.io/badge/Version-0.1.4-blueviolet?style=for-the-badge&logo=Rust">
   </a>
   <a href="https://github.com/HaeckGabriel/gevdist_rust">
     <img src="https://img.shields.io/github/downloads/HaeckGabriel/gevdist_rust/total?label=Downloads&logo=Github&style=for-the-badge&color=blue">
