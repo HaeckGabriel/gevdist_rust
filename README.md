@@ -1,6 +1,6 @@
 <h1 align="center"> GEV Distribution </h1>
 
-<h4 align="center"> The Extreme Value Distributions in Racket. </h4>
+<h4 align="center"> The Extreme Value Distributions in Rust. </h4>
 
 <p align="center">
   <a href="https://crates.io/crates/gevlib">
@@ -13,3 +13,5 @@
     <img src="https://img.shields.io/crates/d/gevlib?label=Crates%20Downloads&logo=Rust&style=for-the-badge&color=9cf">
   </a>
 </p>
+
+Basic Distributional Quantities (CDF, PDfF, Quantile and Random Generation) for the Gumbel, Fréchet, (inverse) Weibull and GEV Distributions.
