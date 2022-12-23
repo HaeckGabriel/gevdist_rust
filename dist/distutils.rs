@@ -1,8 +1,6 @@
 //! Functions used for the distributions.
 
-// To verify that specific domains of parameters are respected.
-// In fact this macro comes form: https://docs.rs/probability/latest/src/probability/lib.rs.html#1-35
-
+/// macro used to ensure that the given domain is valid.
 #[macro_use]
 pub mod macros {
     macro_rules! domain( // should you consider an error enum instead? What is faster? More understandable? One variant for param and one for quantile domain
@@ -11,12 +9,17 @@ pub mod macros {
     );
 }
 
-/// Distributional Quantity trait (i.e. each distribution will provide each of the following)
+/// Distributional Quantity trait (i.e. each distribution will provide each of the following
+/// quantities: the CDF, PDF, Quantile and random generation)
 pub trait DistQuant {
-    fn cdf(&self, x: f64) -> f64;      // cumulative density function (CDF)
-    fn pdf(&self, x: f64) -> f64;      // probability density function (PDF)
-    fn quantile(&self, x: f64) -> f64; // quantile function (i.e. inverse CDF)
-    fn random(&self, seed: RandomSeed) -> f64;           // randomly generated value of the distribution
+    /// Cumulative Distribution Function (CDF)
+    fn cdf(&self, x: f64) -> f64;
+    /// Probability Density Function (PDF)
+    fn pdf(&self, x: f64) -> f64;
+    /// Quantile Function
+    fn quantile(&self, x: f64) -> f64;
+    /// Generate a random value from the distribution
+    fn random(&self, seed: RandomSeed) -> f64;
 }
 
 /// Seeding for the random generation of the distributions.
@@ -26,8 +29,9 @@ pub enum RandomSeed {
     Seed(u64),
 }
 
-/// Default seed is Empty (i.e. random seed)
+/// Default Trait
 impl Default for RandomSeed {
+    /// Default seed is Empty (i.e. random seed)
     fn default() -> Self {
         RandomSeed::Empty
     }
