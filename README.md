@@ -32,7 +32,7 @@ You can read more about the family of GEV Distributions [here](https://en.wikipe
 ### Gumbel Distribution
 
 The Gumbel distribution is defined, for location parameter $\mu$ and scale parameter $\theta > 0$, with the CDF
-$$F(x) = \exp {{ - \exp  {{- \frac{x - \mu}{\theta}   }} }}, \quad x \in \mathbb{R}. $$
+$$F(x) = \exp \left ( - \exp  \left ( - \frac{x - \mu}{\theta}   \right ) \right ), \quad x \in \mathbb{R}. $$
 
 # To do
 - [ ] add macros to create instances of each distribution.
