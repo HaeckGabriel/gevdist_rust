@@ -1,4 +1,4 @@
-<h1 align="center"> GEV Distribution </h1>
+<h1 align="center"> GEV Distribution (Rust) </h1>
 
 <h4 align="center"> The Extreme Value Distributions in Rust. </h4>
 
