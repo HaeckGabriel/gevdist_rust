@@ -38,7 +38,11 @@ $$F(x) = \exp \left ( - \exp  \left ( - \frac{x - \mu}{\sigma}   \right ) \right
 
 The Fréchet distribution is defined, for location parameter $\mu \in \mathbb{R}$, scale and shape parameters $\sigma, \xi >0$, with the CDF
 $$F(x) = \exp \left ( - \left ( \frac{x - \mu}{\sigma} \right)^{-\xi} \right ), \quad x \in \mathbb{R}. $$
-$$F(x) = \exp \left ( - \exp  \left ( - \frac{x - \mu}{\sigma}   \right ) \right ), \quad x \in \mathbb{R}. $$
+
+### (Inverse) Weibull Distribution
+
+The Weibull Distribution, which is in fact the Inverse Weibull distribution, is defined for location parameter $\mu \in \mathbb{R}$, scale and shape parameters $\sigma, \xi >0$, with the CDF
+$$F(x) = \exp \left ( - \left (  - \left ( \frac{x - \mu}{ \sigma } \right) \right)^{\xi}  \right ), \quad x \in \mathbb{R}. $$
 
 # To do
 - [ ] add macros to create instances of each distribution.
