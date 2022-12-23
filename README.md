@@ -20,4 +20,4 @@ Basic Distributional Quantities (CDF, PDfF, Quantile and Random Generation) for 
 - [ ] add macros to create instances of each distribution.
 - [ ] Clean code? 
 - [ ] Add Rust readme file
-- [ ] Add docs.rs file.
+- [ ] Write better documentation
