@@ -1,4 +1,4 @@
-//! Gumbel Distribution
+//! The Gumbel Distribution.
 use libm::{exp, log};
 
 use crate::dist::distutils::*;
@@ -12,12 +12,14 @@ use rand::Rng;
 /// Gumbel Dist. struct
 #[derive(Clone, Copy)]
 pub struct Gumbel {
-    pub loc:   f64, // location parameter, $\in \mathbb{R}$
-    pub scale: f64, // scale parameter, $> 0$
+    /// location parameter
+    pub loc:   f64,
+    /// scale parameter, must be positive
+    pub scale: f64,
 }
 
 impl Gumbel {
-    /// Create Gumbel Distribution given location (loc) and scale parameter.
+    /// Create an instance of the Gumbel Distribution given location (loc) and scale parameter.
     /// The scale parameter must be larger than 0.
     #[inline]
     pub fn new(loc: f64, scale: f64) -> Self {
@@ -64,6 +66,7 @@ impl DistQuant for Gumbel {
         self.loc - self.scale * log(-log(x))
     }
 
+    /// Return a randomly generated value from the Gumbel distribution.
     fn random(&self, seed: RandomSeed) -> f64 {
         
         let mut rng = match seed {
