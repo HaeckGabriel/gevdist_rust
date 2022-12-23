@@ -16,6 +16,24 @@
 
 Basic Distributional Quantities (CDF, PDF, Quantile and Random Generation) for the Gumbel, Fréchet, (inverse) Weibull and GEV Distributions.
 
+<p align="center">
+  <a href="#Installation">Installation</a> •
+  <a href="#Details">Details</a>
+</p>
+
+## Installation
+You can install the package with `cargo add gevlib` or adding the pacakge directly in the `Cargo.toml` file.
+
+## Details
+
+We quickly present the distributions in question.
+You can read more about the family of GEV Distributions [here](https://en.wikipedia.org/wiki/Generalized_extreme_value_distribution). 
+
+### Gumbel Distribution
+
+The Gumbel distribution is defined, for location parameter $\mu$ and scale parameter $\theta > 0$, with the CDF
+$$F(x) = \exp \left \{ - \exp \left \{- \frac{x - \mu}{\theta}  \right \} \right \}, \quad x \in \mathbb{R} $$
+
 # To do
 - [ ] add macros to create instances of each distribution.
 - [ ] Clean code? 
