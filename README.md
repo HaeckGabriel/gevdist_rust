@@ -15,3 +15,6 @@
 </p>
 
 Basic Distributional Quantities (CDF, PDfF, Quantile and Random Generation) for the Gumbel, Fréchet, (inverse) Weibull and GEV Distributions.
+
+To do
+- [ ] add macros to create instances of each distribution.
