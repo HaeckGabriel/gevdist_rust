@@ -1,7 +1,6 @@
 //! GEV Distribution
 use libm::{exp, log, pow};
 
-
 use crate::dist::distutils::*;
 
 use rand_chacha::ChaCha8Rng;
