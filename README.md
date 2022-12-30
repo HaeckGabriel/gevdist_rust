@@ -22,7 +22,7 @@ Basic Distributional Quantities (CDF, PDF, Quantile and Random Generation) for t
 </p>
 
 ## Installation
-You can install the package with `cargo add gevlib` or adding the pacakge directly in the `Cargo.toml` file.
+You can install the package with `cargo add gevlib` or adding the package directly in the `Cargo.toml` file.
 
 ## Details
 
