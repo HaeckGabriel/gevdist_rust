@@ -1,4 +1,60 @@
- 
+//! The (Inverse) Weibull Distribution. The Weibull distribution in the extreme value context is in
+//! fact the Inverse Weibull distribution.
+use libm::{exp, log, pow};
+
+use crate::dist::distutils::*;
+
+use rand_chacha::ChaCha8Rng;
+use rand::SeedableRng;
+use rand::Rng;
+
+/// Fréchet Dist. struct
+#[derive(Clone, Copy)]
+pub struct Weibull {
+    /// location parameter
+    pub loc:   f64,
+    /// scale parameter, must be positive
+    pub scale: f64,
+    /// shape parameter, must be positive
+    pub shape: f64,
+}
+
+impl Weibull {
+    /// Create an instance of the Weibull Distribution given location (loc), scale and shape parameter.
+    /// The scale and shape parameter must be larger than 0.
+    #[inline]
+    pub fn new(loc: f64, scale: f64, shape: f64) -> Self {
+        domain!(scale > 0.0 && shape > 0.0);
+        Weibull{loc, scale, shape}
+    }
+
+    /// Obtain the location parameter
+    #[inline(always)]
+    pub fn loc(&self) -> f64 {
+        self.loc
+    }
+
+    /// Obtain the scale parameter
+    pub fn scale(&self) -> f64 {
+        self.scale
+    }
+
+    /// Obtain the shape parameter
+    pub fn shape(&self) -> f64 {
+        self.shape
+    }
+
+}
+
+impl DistQuant for Weibull {
+    /// CDF: $F(x) = \exp \left \{ - \left (  - \left ( \frac{x - loc}{ scale } \right) \right)^{shape}  \right \} $
+    /// for $x < loc$, $loc \in \mathbb{R}$, $scale > 0$ and $shape > 0$.
+    fn cdf(&self, x: f64) -> f64 {
+        domain!(x < self.loc && self.scale > 0.0 && self.shape > 0.0);
+        let y: f64 = (x - self.loc) / self.scale;
+        exp(- pow(-y, self.shape))
+    }
+    
     /// PDF of the Weibull distribution.
     /// $$f(x) = \frac{shape}{scale} \left ( - \frac{x - loc}{scale} \right)^{shape -1} \cdot F(x) $$
     fn pdf(&self, x: f64) -> f64 {
